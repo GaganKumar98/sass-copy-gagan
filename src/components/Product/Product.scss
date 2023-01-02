@@ -1,0 +1,64 @@
+@import '../../common/colors.scss';
+.card {
+  background: $color-tertiary;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  transition: all 0.2s ease-in;
+}
+.card:hover {
+  transform: scale(1.1);
+  transition-timing-function: linear;
+}
+.productsWrapper {
+  background-color: $color-secondary;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+.btn {
+  border: none;
+  outline: none;
+  background: $color-btn-dark;
+  padding: 10px 15px;
+  color: $font-light;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.btn-disabled {
+  text-decoration: line-through;
+  border: none;
+  outline: none;
+  background: #656565;
+  padding: 10px 15px;
+  color: $font-light;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.btn-counter {
+  border: none;
+  outline: none;
+  background: $color-btn-dark;
+  padding: 10px 10px;
+  color: $font-light;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin: 3px;
+}
+img {
+  height: 100px;
+  border-radius: 10px;
+}
+.card-counter {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 10px;
+}

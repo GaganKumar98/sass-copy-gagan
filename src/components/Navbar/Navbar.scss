@@ -1,0 +1,27 @@
+@import '../../common/colors.scss';
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+  background-color: $color-primary;
+  color: $font-light;
+}
+.navLink {
+  text-decoration: none;
+  margin-left: 20px;
+  border: none;
+  outline: none;
+  background: $color-btn-light;
+  padding: 5px 15px;
+  color: $font-light;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.cartCount {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-left: 40px;
+}

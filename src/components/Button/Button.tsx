@@ -1,8 +1,16 @@
-import React, { ReactNode } from 'react'
+import React, {
+  ButtonHTMLAttributes,
+  DetailedHTMLProps,
+  ReactNode,
+} from 'react'
 import './Button.scss'
 
-interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
-  variant: string
+interface ButtonProps
+  extends DetailedHTMLProps<
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  > {
+  variant: string | undefined
   children: ReactNode
 }
 

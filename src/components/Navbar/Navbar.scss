@@ -1,10 +1,18 @@
 @import '../../common/colors.scss';
-.navBar {
+.navBarPrimary {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 25px;
   background-color: $color-primary;
+  color: $font-light;
+}
+.navBarSuccess {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+  background-color: green;
   color: $font-light;
 }
 .navLink {

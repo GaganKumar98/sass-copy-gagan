@@ -1,5 +1,5 @@
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -7,3 +7,16 @@ export const parameters = {
     },
   },
 }
+import { MemoryRouter } from 'react-router'
+// import { Provider } from 'react-redux'
+// import { store } from './features/store'
+
+export const decorators = [
+  (Story) => (
+    <MemoryRouter initialEntries={['/']}>
+      {/* <Provider store={store}> */}
+      <Story />
+      {/* </Provider> */}
+    </MemoryRouter>
+  ),
+]

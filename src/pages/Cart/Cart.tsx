@@ -39,7 +39,8 @@ const Cart = () => {
               <img src={product.image} alt="" />
             </div>
             <div className="cart-item-details">
-              <h3>{product.title}</h3>s<h3>{product.price}$</h3>
+              <h3>{product.title}</h3>
+              <h3>{product.price}$</h3>
             </div>
             <div className="cart-item-controls">
               <div className="card-counter">

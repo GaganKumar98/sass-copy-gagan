@@ -9,6 +9,7 @@ import {
   increment,
   STATUSES,
 } from '../../features/productSlice'
+import { Card } from '../Card/Card'
 
 const Product = () => {
   //const [products, setProducts] = useState<IProduct[]>([])
@@ -63,7 +64,7 @@ const Product = () => {
           )
         } else {
           return (
-            <div className="card" key={product.id}>
+            <Card variant="product" key={product.id}>
               <img src={product.image} alt={product.title} />
               <h4>{product.title}</h4>
               <h5>{product.price} $</h5>
@@ -86,7 +87,7 @@ const Product = () => {
               <button className="btn" onClick={() => handleAdd(product)}>
                 Add To Cart
               </button>
-            </div>
+            </Card>
           )
         }
       })}

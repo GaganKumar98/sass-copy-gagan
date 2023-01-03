@@ -1,36 +1,24 @@
 @import '../../common/colors.scss';
-.btn-primary {
+.btn {
   border: none;
   outline: none;
-  background: $color-btn-dark;
-  padding: 10px 15px;
   color: $font-light;
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+}
+.btn-primary {
+  background: $color-btn-dark;
+  padding: 10px 15px;
 }
 .btn-disabled {
   text-decoration: line-through;
-  border: none;
-  outline: none;
   background: #656565;
   padding: 10px 15px;
-  color: $font-light;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
 }
 .btn-counter {
-  border: none;
-  outline: none;
   background: $color-btn-dark;
   padding: 10px 10px;
-  color: $font-light;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
   margin: 3px;
 }

@@ -1,23 +1,19 @@
-import React, {
-  ButtonHTMLAttributes,
-  DetailedHTMLProps,
-  ReactNode,
-} from 'react'
+import React from 'react'
 import './Button.scss'
 
-interface ButtonProps
-  extends DetailedHTMLProps<
-    ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-  > {
-  variant: string | undefined
-  children: ReactNode
+export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+  children?: React.ReactNode
+  onClick?: () => void
+  variant: string
 }
 
-export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
-  const { variant = 'primary', children, ...rest } = props
+export const Button: React.FC<ButtonProps> = ({
+  children,
+  onClick,
+  variant,
+}) => {
   return (
-    <button className={`button ${variant}`} {...rest}>
+    <button className={`btn btn-${variant}`} onClick={onClick}>
       {children}
     </button>
   )

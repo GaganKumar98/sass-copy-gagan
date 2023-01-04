@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card } from './Card'
 import { ComponentMeta } from '@storybook/react'
+import { Button } from '../Button/Button'
 
 export default {
   title: 'Card',
@@ -38,10 +39,10 @@ export const ProductCard = () => (
     <h5>{product.price} $</h5>
     <h6>{product.status}</h6>
     <div className="card-counter">
-      <button className="btn-counter">-</button>
+      <Button variant={'counter'}>-</Button>
       <p>{product.quantity}</p>
-      <button className="btn-counter">+</button>
+      <Button variant={'counter'}>+</Button>
     </div>
-    <button className="btn">Add To Cart</button>
+    <Button variant={'primary'}>Add To Cart</Button>
   </Card>
 )

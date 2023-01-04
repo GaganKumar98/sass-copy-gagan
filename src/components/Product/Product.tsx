@@ -10,6 +10,7 @@ import {
   STATUSES,
 } from '../../features/productSlice'
 import { Card } from '../Card/Card'
+import { Button } from '../Button/Button'
 
 const Product = () => {
   //const [products, setProducts] = useState<IProduct[]>([])
@@ -48,7 +49,7 @@ const Product = () => {
       {products.map((product: IProduct) => {
         if (product.status === 'out of stock') {
           return (
-            <div className="card" key={product.id}>
+            <Card variant="product" key={product.id}>
               <img src={product.image} alt={product.title} />
               <h4>{product.title}</h4>
               <h5>{product.price} $</h5>
@@ -60,7 +61,7 @@ const Product = () => {
               >
                 Add To Cart
               </button>
-            </div>
+            </Card>
           )
         } else {
           return (
@@ -70,23 +71,23 @@ const Product = () => {
               <h5>{product.price} $</h5>
               <h6>{product.status}</h6>
               <div className="card-counter">
-                <button
-                  className="btn-counter"
+                <Button
                   onClick={() => handleDecrement(product)}
+                  variant={'counter'}
                 >
                   -
-                </button>
+                </Button>
                 <p>{product.quantity}</p>
-                <button
-                  className="btn-counter"
+                <Button
+                  variant={'counter'}
                   onClick={() => handleIncrement(product)}
                 >
                   +
-                </button>
+                </Button>
               </div>
-              <button className="btn" onClick={() => handleAdd(product)}>
+              <Button variant={'primary'} onClick={() => handleAdd(product)}>
                 Add To Cart
-              </button>
+              </Button>
             </Card>
           )
         }

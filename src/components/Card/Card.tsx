@@ -12,10 +12,14 @@ interface CardProps {
 //price - product.price
 //status - product.status
 
-export const Card: React.FC<CardProps> = (props) => {
-  const { variant, children, key, ...rest } = props
+export const Card: React.FC<CardProps> = ({
+  variant,
+  children,
+  key,
+  ...rest
+}) => {
   return (
-    <div className={`${variant}-card`} key={key} {...rest}>
+    <div className={`card card-${variant}`} key={key} {...rest}>
       {children}
     </div>
   )

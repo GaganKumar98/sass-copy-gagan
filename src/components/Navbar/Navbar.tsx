@@ -1,14 +1,6 @@
-// import { ReactNode } from 'react'
-
 import { Link } from 'react-router-dom'
 import { useAppSelector } from '../../hooks/hooks'
-
 import './Navbar.scss'
-
-// interface linkProps {
-//   variant: string
-//   // children: ReactNode
-// }
 
 const Navbar = (props: { color: string }) => {
   const items = useAppSelector((state) => state.cart)

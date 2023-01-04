@@ -13,17 +13,9 @@ import { Card } from '../Card/Card'
 import { Button } from '../Button/Button'
 
 const Product = () => {
-  //const [products, setProducts] = useState<IProduct[]>([])
-  //const [quantity, setQuantity] = useState<number>(0)
   const { data: products, status } = useAppSelector((state) => state.product)
   const dispatch = useAppDispatch()
   useEffect(() => {
-    // const fetchProducts = async () => {
-    //   const res = await fetch('http://localhost:5000/products')
-    //   const data = await res.json()
-    //   setProducts(data)
-    // }
-    // fetchProducts()
     dispatch(fetchProducts())
   }, [])
   console.log(products)
@@ -34,7 +26,6 @@ const Product = () => {
     dispatch(decrement(product))
   }
   const handleIncrement = (product: IProduct) => {
-    // setQuantity(quantity + 1)
     dispatch(increment(product))
   }
   if (status === STATUSES.LOADING) {

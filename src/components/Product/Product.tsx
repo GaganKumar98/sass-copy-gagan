@@ -61,24 +61,55 @@ const Product = () => {
               <h4>{product.title}</h4>
               <h5>{product.price} $</h5>
               <h6>{product.status}</h6>
-              <div className="card-counter">
-                <Button
-                  onClick={() => handleDecrement(product)}
-                  variant={'counter'}
-                >
-                  -
-                </Button>
-                <p>{product.quantity}</p>
-                <Button
-                  variant={'counter'}
-                  onClick={() => handleIncrement(product)}
-                >
-                  +
-                </Button>
-              </div>
-              <Button variant={'primary'} onClick={() => handleAdd(product)}>
-                Add To Cart
-              </Button>
+              {product.quantity <= 0 ? (
+                <>
+                  <div className="card-counter">
+                    <Button
+                      // onClick={() => handleDecrement(product)}
+                      variant={'disabled'}
+                    >
+                      -
+                    </Button>
+                    <p>{product.quantity}</p>
+                    <Button
+                      variant={'counter'}
+                      onClick={() => handleIncrement(product)}
+                    >
+                      +
+                    </Button>
+                  </div>
+                  <Button
+                    variant={'disabled'}
+                    // onClick={() => handleAdd(product)}
+                  >
+                    Add To Cart
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <div className="card-counter">
+                    <Button
+                      onClick={() => handleDecrement(product)}
+                      variant={'counter'}
+                    >
+                      -
+                    </Button>
+                    <p>{product.quantity}</p>
+                    <Button
+                      variant={'counter'}
+                      onClick={() => handleIncrement(product)}
+                    >
+                      +
+                    </Button>
+                  </div>
+                  <Button
+                    variant={'primary'}
+                    onClick={() => handleAdd(product)}
+                  >
+                    Add To Cart
+                  </Button>
+                </>
+              )}
             </Card>
           )
         }

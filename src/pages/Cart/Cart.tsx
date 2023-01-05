@@ -3,6 +3,7 @@ import { cartDecrement, cartIncrement, remove } from '../../features/cartSlice'
 import { IProduct } from '../../common/ProductInterface'
 //import { increment } from '../../features/productSlice'
 import './Cart.scss'
+import { Button } from '../../components/Button/Button'
 
 const Cart = () => {
   const cartItems = useAppSelector((state) => state.cart)
@@ -42,26 +43,44 @@ const Cart = () => {
               <h3>{product.title}</h3>
               <h3>{product.price}$</h3>
             </div>
-            <div className="cart-item-controls">
-              <div className="card-counter">
-                <button
-                  className="btn-counter"
-                  onClick={() => handleDecrement(product)}
-                >
-                  -
-                </button>
-                <p>{product.quantity}</p>
-                <button
-                  className="btn-counter"
-                  onClick={() => handleIncrement(product)}
-                >
-                  +
+            {product.quantity <= 1 ? (
+              <div className="cart-item-controls">
+                <div className="card-counter">
+                  <Button variant="disabled">-</Button>
+                  <p>{product.quantity}</p>
+                  <Button
+                    variant="counter"
+                    onClick={() => handleIncrement(product)}
+                  >
+                    +
+                  </Button>
+                </div>
+                <button className="btn" onClick={() => handleRemove(product)}>
+                  Remove
                 </button>
               </div>
-              <button className="btn" onClick={() => handleRemove(product)}>
-                Remove
-              </button>
-            </div>
+            ) : (
+              <div className="cart-item-controls">
+                <div className="card-counter">
+                  <Button
+                    variant="counter"
+                    onClick={() => handleDecrement(product)}
+                  >
+                    -
+                  </Button>
+                  <p>{product.quantity}</p>
+                  <Button
+                    variant="counter"
+                    onClick={() => handleIncrement(product)}
+                  >
+                    +
+                  </Button>
+                </div>
+                <Button variant="btn" onClick={() => handleRemove(product)}>
+                  Remove
+                </Button>
+              </div>
+            )}
           </div>
         ))}
       </div>

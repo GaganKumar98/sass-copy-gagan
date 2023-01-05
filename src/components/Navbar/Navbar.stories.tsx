@@ -2,8 +2,6 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { Provider } from 'react-redux'
 import { store } from '../../features/store'
 import Navbar from './Navbar'
-import { store } from '../../features/store'
-import { Provider } from 'react-redux'
 
 export default {
   title: 'Navbar',

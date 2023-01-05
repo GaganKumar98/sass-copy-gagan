@@ -3,25 +3,52 @@ import '@testing-library/jest-dom'
 import Navbar from '../Navbar/Navbar'
 // import { store } from '../../features/store'
 import { MemoryRouter } from 'react-router'
+import { store } from '../../features/store'
+import { Provider } from 'react-redux'
 
 describe('Navbar Test', () => {
-  test('Navbar rendering', async () => {
+  test('Should render navbar', () => {
     render(
-      <MemoryRouter>
-        <Navbar color="Primary" />
-      </MemoryRouter>
+      <Provider store={store}>
+        <MemoryRouter>
+          <Navbar color="Primary" />
+        </MemoryRouter>
+      </Provider>
+    )
+    const navBar = screen.getByTestId('navbarId')
+    expect(navBar).toBeInTheDocument()
+  })
+  test('Should render navbar heading', async () => {
+    render(
+      <Provider store={store}>
+        <MemoryRouter>
+          <Navbar color="Primary" />
+        </MemoryRouter>
+      </Provider>
     )
     const navbar = await screen.findByText('STORE')
     expect(navbar).toHaveTextContent('STORE')
   })
-  test('Number of links in Navbar rendering', () => {
+  test('Should render 2 links', () => {
     render(
-      <MemoryRouter>
-        <Navbar color={'Primary'} />
-      </MemoryRouter>
+      <Provider store={store}>
+        <MemoryRouter>
+          <Navbar color={'Primary'} />
+        </MemoryRouter>
+      </Provider>
     )
-    const anchorList = screen.queryAllByRole('Link')
-    console.log('a List : ', anchorList.length)
-    expect(anchorList).toHaveLength(0)
+    const link = screen.getAllByRole('link')
+    expect(link).toHaveLength(2)
+  })
+  test('Should render Cart Items Number', () => {
+    render(
+      <Provider store={store}>
+        <MemoryRouter>
+          <Navbar color={'Primary'} />
+        </MemoryRouter>
+      </Provider>
+    )
+    const cartItem = screen.getByText(/cart items : 0/i)
+    expect(cartItem).toBeInTheDocument()
   })
 })

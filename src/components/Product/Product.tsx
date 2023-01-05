@@ -17,7 +17,7 @@ const Product = () => {
   const dispatch = useAppDispatch()
   useEffect(() => {
     dispatch(fetchProducts())
-  }, [])
+  }, [dispatch])
   console.log(products)
   const handleAdd = (product: IProduct) => {
     dispatch(add(product))

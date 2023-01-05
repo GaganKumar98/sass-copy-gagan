@@ -8,7 +8,7 @@ const Navbar = (props: { color: string }) => {
   return (
     <header className={`navBar${color}`}>
       <span>STORE</span>
-      <div>
+      <div data-testid="navbarId">
         <Link className="navLink" to="/">
           Home
         </Link>

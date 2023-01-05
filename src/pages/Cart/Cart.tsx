@@ -4,6 +4,7 @@ import { IProduct } from '../../common/ProductInterface'
 //import { increment } from '../../features/productSlice'
 import './Cart.scss'
 import { Button } from '../../components/Button/Button'
+import { CartItem } from '../../components/CartItem/CartItem'
 
 const Cart = () => {
   const cartItems = useAppSelector((state) => state.cart)
@@ -35,7 +36,7 @@ const Cart = () => {
       <h2 className="heading">Your Cart Total is {totalAmount.toFixed(2)} $</h2>
       <div className="cart-list">
         {cartItems.map((product) => (
-          <div className="cart-item" key={product.id}>
+          <CartItem variant="cart-item" key={product.id}>
             <div className="cart-item-image">
               <img src={product.image} alt="" />
             </div>
@@ -81,7 +82,7 @@ const Cart = () => {
                 </Button>
               </div>
             )}
-          </div>
+          </CartItem>
         ))}
       </div>
     </div>

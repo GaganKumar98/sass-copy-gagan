@@ -14,7 +14,7 @@ const Navbar = (props: { color: string }) => {
   // const items = useAppSelector((state) => state.cart)
   const { color } = props
   return (
-    <div className={`navBar${color}`}>
+    <header className={`navBar${color}`}>
       <span>STORE</span>
       <div>
         <Link className="navLink" to="/">
@@ -29,7 +29,7 @@ const Navbar = (props: { color: string }) => {
            items.length} */}
         </span>
       </div>
-    </div>
+    </header>
   )
 }
 

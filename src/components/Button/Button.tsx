@@ -13,7 +13,11 @@ export const Button: React.FC<ButtonProps> = ({
   variant,
 }) => {
   return (
-    <button className={`btn btn-${variant}`} onClick={onClick}>
+    <button
+      className={`btn btn-${variant}`}
+      onClick={onClick}
+      data-testid="ok-button"
+    >
       {children}
     </button>
   )

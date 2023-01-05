@@ -16,7 +16,7 @@ const mockData = {
 
 const MockCartItem = () => {
   return (
-    <CartItem key={mockData.id} variant={''}>
+    <CartItem variant={'cart-item'}>
       <div className="cart-item-image">
         <img src={mockData.image} alt="" />
       </div>

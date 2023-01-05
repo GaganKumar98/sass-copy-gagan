@@ -18,7 +18,7 @@ const newMockData = {
 const TestCard = () => {
   return (
     newMockData && (
-      <Card key={newMockData.id} variant={''}>
+      <Card variant={''}>
         <img src={newMockData.image} alt={newMockData.title} />
         <h4>{newMockData.title}</h4>
         <h5>{newMockData.price} $</h5>

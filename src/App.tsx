@@ -10,7 +10,7 @@ export const App = () => {
     <>
       <Provider store={store}>
         <BrowserRouter>
-          <Navbar color="Primary" />
+          <Navbar color={'Primary'} />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/cart" element={<Cart />} />

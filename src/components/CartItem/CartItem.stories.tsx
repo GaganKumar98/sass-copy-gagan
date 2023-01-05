@@ -1,6 +1,7 @@
 import React from 'react'
 import { CartItem } from './CartItem'
 import { ComponentMeta } from '@storybook/react'
+import { Button } from '../Button/Button'
 
 export default {
   title: 'CartItem',
@@ -42,11 +43,11 @@ export const CartItemPrimary = () => (
     </div>
     <div className="cart-item-controls">
       <div className="card-counter">
-        <button className="btn-counter">-</button>
+        <Button variant={'counter'}>-</Button>
         <p>{cartItem.quantity}</p>
-        <button className="btn-counter">+</button>
+        <Button variant={'counter'}>+</Button>
       </div>
-      <button className="btn">Remove</button>
+      <Button variant={'primary'}>Remove</Button>
     </div>
   </CartItem>
 )

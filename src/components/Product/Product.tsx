@@ -10,19 +10,12 @@ import {
   STATUSES,
 } from '../../features/productSlice'
 import { Card } from '../Card/Card'
+import { Button } from '../Button/Button'
 
 const Product = () => {
-  //const [products, setProducts] = useState<IProduct[]>([])
-  //const [quantity, setQuantity] = useState<number>(0)
   const { data: products, status } = useAppSelector((state) => state.product)
   const dispatch = useAppDispatch()
   useEffect(() => {
-    // const fetchProducts = async () => {
-    //   const res = await fetch('http://localhost:5000/products')
-    //   const data = await res.json()
-    //   setProducts(data)
-    // }
-    // fetchProducts()
     dispatch(fetchProducts())
   }, [])
   console.log(products)
@@ -33,7 +26,6 @@ const Product = () => {
     dispatch(decrement(product))
   }
   const handleIncrement = (product: IProduct) => {
-    // setQuantity(quantity + 1)
     dispatch(increment(product))
   }
   if (status === STATUSES.LOADING) {
@@ -48,7 +40,7 @@ const Product = () => {
       {products.map((product: IProduct) => {
         if (product.status === 'out of stock') {
           return (
-            <div className="card" key={product.id}>
+            <Card variant="product" key={product.id}>
               <img src={product.image} alt={product.title} />
               <h4>{product.title}</h4>
               <h5>{product.price} $</h5>
@@ -60,7 +52,7 @@ const Product = () => {
               >
                 Add To Cart
               </button>
-            </div>
+            </Card>
           )
         } else {
           return (
@@ -70,23 +62,23 @@ const Product = () => {
               <h5>{product.price} $</h5>
               <h6>{product.status}</h6>
               <div className="card-counter">
-                <button
-                  className="btn-counter"
+                <Button
                   onClick={() => handleDecrement(product)}
+                  variant={'counter'}
                 >
                   -
-                </button>
+                </Button>
                 <p>{product.quantity}</p>
-                <button
-                  className="btn-counter"
+                <Button
+                  variant={'counter'}
                   onClick={() => handleIncrement(product)}
                 >
                   +
-                </button>
+                </Button>
               </div>
-              <button className="btn" onClick={() => handleAdd(product)}>
+              <Button variant={'primary'} onClick={() => handleAdd(product)}>
                 Add To Cart
-              </button>
+              </Button>
             </Card>
           )
         }

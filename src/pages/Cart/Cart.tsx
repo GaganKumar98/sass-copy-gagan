@@ -6,7 +6,6 @@ import './Cart.scss'
 import { Button } from '../../components/Button/Button'
 import { CartItem } from '../../components/CartItem/CartItem'
 import Swal from 'sweetalert2'
-// import withReactContent from 'sweetalert2-react-content'
 
 const Cart = () => {
   const cartItems = useAppSelector((state) => state.cart)
@@ -18,12 +17,6 @@ const Cart = () => {
     showConfirmButton: false,
     timer: 3000,
     timerProgressBar: false,
-    didOpen: (toast: {
-      addEventListener: (arg0: string, arg1: any) => void
-    }) => {
-      toast.addEventListener('mouseenter', Swal.stopTimer)
-      toast.addEventListener('mouseleave', Swal.resumeTimer)
-    },
   })
   // const MySwal = withReactContent(Swal)
   //let sum = 0

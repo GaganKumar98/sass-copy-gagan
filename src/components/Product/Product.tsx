@@ -26,12 +26,6 @@ const Product = () => {
     showConfirmButton: false,
     timer: 3000,
     timerProgressBar: false,
-    didOpen: (toast: {
-      addEventListener: (arg0: string, arg1: any) => void
-    }) => {
-      toast.addEventListener('mouseenter', Swal.stopTimer)
-      toast.addEventListener('mouseleave', Swal.resumeTimer)
-    },
   })
   //console.log(products)
   const handleAdd = (product: IProduct) => {

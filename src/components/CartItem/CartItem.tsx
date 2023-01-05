@@ -4,13 +4,12 @@ import './CartItem.scss'
 interface CartItemProps {
   variant: string
   children: ReactNode
-  key: number
 }
 
 export const CartItem: React.FC<CartItemProps> = (props) => {
-  const { variant, children, key, ...rest } = props
+  const { variant, children, ...rest } = props
   return (
-    <div className={`${variant}`} key={key} {...rest}>
+    <div className={`${variant}`} {...rest}>
       {children}
     </div>
   )

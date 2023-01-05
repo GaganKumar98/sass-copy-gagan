@@ -11,6 +11,7 @@ import {
 } from '../../features/productSlice'
 import { Card } from '../Card/Card'
 import { Button } from '../Button/Button'
+import Swal from 'sweetalert2'
 
 const Product = () => {
   const { data: products, status } = useAppSelector((state) => state.product)
@@ -18,9 +19,27 @@ const Product = () => {
   useEffect(() => {
     dispatch(fetchProducts())
   }, [dispatch])
-  console.log(products)
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: false,
+    didOpen: (toast: {
+      addEventListener: (arg0: string, arg1: any) => void
+    }) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    },
+  })
+  //console.log(products)
   const handleAdd = (product: IProduct) => {
     dispatch(add(product))
+    Toast.fire({
+      icon: 'success',
+      title: 'Prodcut added to cart',
+    })
   }
   const handleDecrement = (product: IProduct) => {
     dispatch(decrement(product))

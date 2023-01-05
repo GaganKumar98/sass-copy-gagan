@@ -19,7 +19,7 @@ const initialState: IinitialState = {
   status: STATUSES.IDLE,
 }
 
-const productSlice = createSlice({
+export const productSlice = createSlice({
   name: 'product',
   initialState,
   reducers: {

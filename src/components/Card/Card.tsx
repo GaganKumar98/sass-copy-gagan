@@ -4,7 +4,6 @@ import './Card.scss'
 interface CardProps {
   variant: string
   children: ReactNode
-  key: number
 }
 //variant - classname - card
 //key - product.id
@@ -12,14 +11,9 @@ interface CardProps {
 //price - product.price
 //status - product.status
 
-export const Card: React.FC<CardProps> = ({
-  variant,
-  children,
-  key,
-  ...rest
-}) => {
+export const Card: React.FC<CardProps> = ({ variant, children, ...rest }) => {
   return (
-    <div className={`card card-${variant}`} key={key} {...rest}>
+    <div className={`card card-${variant}`} {...rest}>
       {children}
     </div>
   )

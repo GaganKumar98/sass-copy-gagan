@@ -1,7 +1,9 @@
 import productReducer, {
   decrement,
+  fetchProducts,
   increment,
 } from '../../features/productSlice'
+import fetch from 'node-fetch'
 
 const mockProduct = {
   id: 1,
@@ -90,6 +92,20 @@ describe('Product Slice Test', () => {
           quantity: 0,
         },
       ],
+      status: 'idle',
+    })
+  })
+  test('Should decrement product quantity with same id', async () => {
+    const response = await fetch('http://localhost:5000/products').then(
+      (response) => response.json()
+    )
+    expect(
+      productReducer(initialState, {
+        type: fetchProducts.fulfilled.type,
+        payload: response,
+      })
+    ).toEqual({
+      data: response,
       status: 'idle',
     })
   })

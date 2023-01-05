@@ -5,10 +5,27 @@ import { IProduct } from '../../common/ProductInterface'
 import './Cart.scss'
 import { Button } from '../../components/Button/Button'
 import { CartItem } from '../../components/CartItem/CartItem'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const Cart = () => {
   const cartItems = useAppSelector((state) => state.cart)
   const dispatch = useAppDispatch()
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: false,
+    didOpen: (toast: {
+      addEventListener: (arg0: string, arg1: any) => void
+    }) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    },
+  })
+  const MySwal = withReactContent(Swal)
   //let sum = 0
   const totalAmount = cartItems.reduce(
     (total, item) => total + item.quantity * item.price,
@@ -16,6 +33,13 @@ const Cart = () => {
   )
   const handleRemove = (product: IProduct) => {
     dispatch(remove(product))
+    MySwal.fire({
+      position: 'center',
+      icon: 'success',
+      title: '"Question Answer Delete!',
+      showConfirmButton: false,
+      timer: 1500,
+    })
   }
   const handleIncrement = (product: IProduct) => {
     // setQuantity(quantity + 1)

@@ -35,9 +35,11 @@ const product = {
 export const ProductCard = () => (
   <Card variant="product" key={product.id}>
     <img src={product.image} alt={product.title} />
-    <h4>{product.title}</h4>
-    <h5>{product.price} $</h5>
-    <h6>{product.status}</h6>
+    <div className="product-info">
+      <h4>{product.title}</h4>
+      <h5>{product.price} $</h5>
+      <h6>{product.status}</h6>
+    </div>
     <div className="card-counter">
       <Button variant={'counter'}>-</Button>
       <p>{product.quantity}</p>

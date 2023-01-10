@@ -2,7 +2,7 @@ import productReducer, {
   decrement,
   fetchProducts,
   increment,
-} from '../../features/productSlice'
+} from '../productSlice'
 import fetch from 'node-fetch'
 
 const mockProduct = {

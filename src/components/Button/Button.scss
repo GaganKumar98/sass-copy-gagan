@@ -8,17 +8,22 @@
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
+.btn:focus-visible {
+  /* remove default focus style */
+  outline: 3px solid black;
+  /* custom focus styles */
+}
 .btn-primary {
-  background: $color-btn-dark;
+  background-color: $color-btn-dark;
   padding: 10px 15px;
 }
 .btn-disabled {
   text-decoration: line-through;
-  background: #656565;
+  background-color: $font-dark;
   padding: 10px 15px;
 }
 .btn-counter {
-  background: $color-btn-dark;
+  background-color: $color-btn-dark;
   padding: 10px 10px;
   margin: 3px;
 }

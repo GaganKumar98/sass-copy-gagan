@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import { Card } from '../Card/Card'
-import { Button } from '../Button/Button'
+import { Card } from '../Card'
+import { Button } from '../../Button/Button'
 
 const newMockData = {
   id: 1,

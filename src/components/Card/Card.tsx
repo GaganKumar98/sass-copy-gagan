@@ -5,11 +5,6 @@ interface CardProps {
   variant: string
   children: ReactNode
 }
-//variant - classname - card
-//key - product.id
-//title - product.title
-//price - product.price
-//status - product.status
 
 export const Card: React.FC<CardProps> = ({ variant, children, ...rest }) => {
   return (

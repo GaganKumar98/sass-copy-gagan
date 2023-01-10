@@ -3,8 +3,8 @@ import cartReducer, {
   cartDecrement,
   cartIncrement,
   remove,
-} from '../../features/cartSlice'
-import { IProduct } from '../../common/ProductInterface'
+} from '../cartSlice'
+import { IProduct } from '../../../common/ProductInterface'
 
 type Cart = IProduct[]
 

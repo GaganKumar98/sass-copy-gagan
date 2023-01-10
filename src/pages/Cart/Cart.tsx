@@ -1,5 +1,9 @@
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks'
-import { cartDecrement, cartIncrement, remove } from '../../features/cartSlice'
+import {
+  cartDecrement,
+  cartIncrement,
+  remove,
+} from '../../features/cartSlice/cartSlice'
 import { IProduct } from '../../common/ProductInterface'
 //import { increment } from '../../features/productSlice'
 import './Cart.scss'

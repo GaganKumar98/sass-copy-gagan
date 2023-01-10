@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
 //import Product from '../Product/Product'
-import { store } from '../../features/store'
+import { store } from '../../../features/store'
 import { Provider } from 'react-redux'
 import '@testing-library/jest-dom'
 

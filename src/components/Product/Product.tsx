@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { add } from '../../features/cartSlice'
+import { add } from '../../features/cartSlice/cartSlice'
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks'
 import './Product.scss'
 import { IProduct } from '../../common/ProductInterface'
@@ -8,7 +8,7 @@ import {
   fetchProducts,
   increment,
   STATUSES,
-} from '../../features/productSlice'
+} from '../../features/productSlice/productSlice'
 import { Card } from '../Card/Card'
 import { Button } from '../Button/Button'
 import Swal from 'sweetalert2'
@@ -54,26 +54,32 @@ const Product = () => {
         if (product.status === 'out of stock') {
           return (
             <Card variant="product" key={product.id}>
-              <img src={product.image} alt={product.title} />
-              <h4>{product.title}</h4>
-              <h5>{product.price} $</h5>
-              <h6>{product.status}</h6>
-              <button
-                disabled
-                className="btn-disabled"
-                onClick={() => handleAdd(product)}
-              >
-                Add To Cart
-              </button>
+              <div className="product-disabled">
+                <img src={product.image} alt={product.title} />
+                <div className="product-info">
+                  <h4>{product.title}</h4>
+                  <h5>{product.price} $</h5>
+                  <h6>{product.status}</h6>
+                </div>
+                <button
+                  disabled
+                  className="btn-disabled"
+                  onClick={() => handleAdd(product)}
+                >
+                  Add To Cart
+                </button>
+              </div>
             </Card>
           )
         } else {
           return (
             <Card variant="product" key={product.id}>
               <img src={product.image} alt={product.title} />
-              <h4>{product.title}</h4>
-              <h5>{product.price} $</h5>
-              <h6>{product.status}</h6>
+              <div className="product-info">
+                <h4>{product.title}</h4>
+                <h5>{product.price} $</h5>
+                <h6>{product.status}</h6>
+              </div>
               {product.quantity <= 0 ? (
                 <>
                   <div className="card-counter">

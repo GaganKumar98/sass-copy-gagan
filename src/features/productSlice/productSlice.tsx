@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import { IProduct } from '../common/ProductInterface'
+import { IProduct } from '../../common/ProductInterface'
 
 export const STATUSES = Object.freeze({
   IDLE: 'idle',

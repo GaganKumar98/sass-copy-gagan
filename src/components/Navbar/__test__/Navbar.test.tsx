@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import Navbar from '../Navbar/Navbar'
+import Navbar from '../Navbar'
 // import { store } from '../../features/store'
 import { MemoryRouter } from 'react-router'
-import { store } from '../../features/store'
+import { store } from '../../../features/store'
 import { Provider } from 'react-redux'
 
 describe('Navbar Test', () => {

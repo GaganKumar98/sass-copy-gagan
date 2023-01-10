@@ -28,6 +28,11 @@
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
+.navLink:focus-visible {
+  /* remove default focus style */
+  outline: 3px solid black;
+  /* custom focus styles */
+}
 .cartCount {
   font-weight: bold;
   text-transform: uppercase;

@@ -1,12 +1,12 @@
 @import '../../common/colors.scss';
-.card {
-  background: $color-tertiary;
-  padding: 20px;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  transition: all 0.2s ease-in;
-}
+// .card {
+//   background: $color-tertiary;
+//   padding: 20px;
+//   text-align: center;
+//   border-radius: 10px;
+//   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+//   transition: all 0.2s ease-in;
+// }
 .card:hover {
   transform: scale(1.1);
   transition-timing-function: linear;
@@ -16,6 +16,15 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  @media screen and (max-width: 415px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 0px;
+  }
 }
 .btn {
   border: none;

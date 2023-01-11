@@ -19,4 +19,7 @@ body {
   padding: 20px;
   padding-top: 0px;
   background: $color-secondary;
+  @media screen and (max-width: 768px) {
+    padding: 20px;
+  }
 }

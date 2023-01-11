@@ -6,6 +6,9 @@
   border-radius: 10px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   transition: all 0.2s ease-in;
+  @media screen and (max-width: 768px) {
+    width: 70%;
+  }
 }
 .product-card {
   background: $color-tertiary;
@@ -14,6 +17,9 @@
   border-radius: 10px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   transition: all 0.2s ease-in;
+  @media screen and (max-width: 768px) {
+    padding: 10px;
+  }
 }
 .product-card:hover {
   transform: scale(1.1);
@@ -41,7 +47,3 @@ img {
     line-height: 25px;
   }
 }
-// .product-display {
-//   display: flex;
-//   align-items: space-evenly;
-// }
